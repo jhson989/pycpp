@@ -1,23 +1,26 @@
+# distutils: language=c++
+'''
+With Cython, it is also possible to take advantage of the C++ language, 
+notably, part of the C++ standard library is directly importable from Cython code.
+The first line is a compiler directive. It tells Cython to compile your code to C++.
+'''
 
-def findPrimes(int num_primes=1):
-    cdef int len_p, n, i # Local C variables
-    cdef int primes[1000] # C array variable
-    num_primes = 1000 if num_primes > 1000 else num_primes
+from libcpp.vector cimport vector
 
-    len_p = 0
+def findPrimes(unsigned int num_primes=1):
+    cdef int n, i
+    cdef vector[int] primes
+    primes.reserve(num_primes)
+
     n = 2
-    while len_p < num_primes:
-        # This loop is translated entirely into C code, because no Python objects are referred to.
-        for i in primes[:len_p]:
+    while primes.size() < num_primes:
+        for i in primes:
             if n % i == 0:
                 break
-        else: # Executed if no break occured
-            primes[len_p] = n
-            len_p += 1
+        else:
+            primes.push_back(n)
         n+=1
         
-    # Conver a C array to a Python list. result_as_list is a Python object type
-    # Cython can automatically convert many C types from and to Python types.
-    result_as_list = [prime for prime in primes[:len_p]]
-
-    return result_as_list
+    # If possible, C values and C++ objects are automatically converted to Python objects at need.
+    # so here, the vector will be copied into a Python list.
+    return primes

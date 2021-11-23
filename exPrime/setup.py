@@ -4,7 +4,7 @@ from Cython.Build import cythonize
 setup(
     name="Fibbonacci sequence",
     ext_modules=cythonize(
-        ["prime.pyx","prime_compiled.py"]
+        ["prime.pyx"]
     , annotate=True)
 )
 

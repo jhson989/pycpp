@@ -1,4 +1,6 @@
-import prime, prime_compiled
+import prime
+import time
 
-print(prime.findPrimes(10))
-print(prime_compiled.findPrimes(10))
+start = time.time_ns()
+prime.findPrimes(100000)
+print("Elapsed time: %.3fs" % ((time.time_ns()-start)*1e-9))

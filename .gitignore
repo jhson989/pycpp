@@ -129,5 +129,9 @@ dmypy.json
 .pyre/
 
 
+# Profiling result
 *.html
+
+# Compiled file
 *.c
+*.cpp
