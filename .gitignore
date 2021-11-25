@@ -133,5 +133,4 @@ dmypy.json
 *.html
 
 # Compiled file
-*.c
-*.cpp
+build/
