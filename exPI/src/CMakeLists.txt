@@ -11,7 +11,7 @@ set (
     pyInterface.pyx
 )
 
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/setup.py
+file(COPY ${PROJECT_SOURCE_DIR}/setup.py
         DESTINATION ${CMAKE_CURRENT_BINARY_DIR}
 )
 
@@ -21,7 +21,7 @@ file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/pyInterface.pyx
 )
 
 add_custom_target(
-    cython 
+    cython ALL
     DEPENDS piCalculator
     COMMAND python setup.py build_ext --inplace
 #    COMMAND python setup.py install --user
