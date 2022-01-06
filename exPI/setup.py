@@ -3,7 +3,7 @@ from Cython.Build import cythonize
 import pathlib
 
 ext_modules = [
-    Extension("pyInterface",
+    Extension("pyPI",
               sources=["pyInterface.pyx"],
               libraries=["piCalculator"],
               library_dirs=[str(pathlib.Path().resolve())],
@@ -11,5 +11,5 @@ ext_modules = [
               )
 ]
 
-setup(name="pyInterface",
+setup(name="pyPI",
       ext_modules=cythonize(ext_modules))

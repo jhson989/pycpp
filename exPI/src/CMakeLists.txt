@@ -24,5 +24,10 @@ add_custom_target(
     cython ALL
     DEPENDS piCalculator
     COMMAND python setup.py build_ext --inplace
-#    COMMAND python setup.py install --user
+    COMMAND python setup.py install --user
 )
+
+install(
+    TARGETS piCalculator 
+    LIBRARY DESTINATION /home/jhson/test/
+    )
