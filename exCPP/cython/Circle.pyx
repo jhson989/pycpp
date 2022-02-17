@@ -1,4 +1,5 @@
 # distutils: language = c++
+STUFF = "Hi"
 
 cdef extern from "Circle.hpp" namespace "excpp":
     cdef cppclass Circle:

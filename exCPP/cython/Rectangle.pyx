@@ -1,5 +1,5 @@
 # distutils: language = c++
-
+STUFF = "Hi"
 
 cdef extern from "Rectangle.hpp" namespace "excpp":
     cdef cppclass Rectangle:

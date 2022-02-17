@@ -5,12 +5,12 @@ import os
 PROJ_NAME = "excpp"
 
 ext_modules = [
+
     Extension(PROJ_NAME,
               sources=[
-                "cython/Rectangle.pyx",
-                "cython/Circle.pyx",
+                "inferface.pyx",
+                "cpp/Circle.cpp",
                 "cpp/Rectangle.cpp",
-                "cpp/Circle.cpp"
               ],
               include_dirs=["include"],
               language="c++"
