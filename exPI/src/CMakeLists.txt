@@ -27,6 +27,10 @@ add_custom_target(
     COMMAND python setup.py install --user
 )
 
+add_custom_target(
+    
+)
+
 install(
     TARGETS piCalculator 
     LIBRARY DESTINATION /home/jhson/test/
