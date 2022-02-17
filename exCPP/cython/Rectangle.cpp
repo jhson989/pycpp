@@ -12,8 +12,10 @@
         "language": "c++",
         "name": "excpp",
         "sources": [
-            "cython/rectInterface.pyx",
-            "cpp/Rectangle.cpp"
+            "cython/Rectangle.pyx",
+            "cython/Circle.pyx",
+            "cpp/Rectangle.cpp",
+            "cpp/Circle.cpp"
         ]
     },
     "module_name": "excpp"
@@ -707,13 +709,9 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__excpp
-#define __PYX_HAVE_API__excpp
+#define __PYX_HAVE__Rectangle
+#define __PYX_HAVE_API__Rectangle
 /* Early includes */
-#include "ios"
-#include "new"
-#include "stdexcept"
-#include "typeinfo"
 #include "Rectangle.hpp"
 #ifdef _OPENMP
 #include <omp.h>
@@ -925,20 +923,20 @@ static const char *__pyx_filename;
 
 static const char *__pyx_f[] = {
   "stringsource",
-  "cython/rectInterface.pyx",
+  "cython/Rectangle.pyx",
 };
 
 /*--- Type declarations ---*/
-struct __pyx_obj_5excpp_PyRectangle;
+struct __pyx_obj_9Rectangle_PyRectangle;
 
-/* "cython/rectInterface.pyx":12
+/* "Rectangle.pyx":12
  *         void move(int dx, int dy)
  * 
  * cdef class PyRectangle:             # <<<<<<<<<<<<<<
  *     cdef Rectangle *thisptr
  * 
  */
-struct __pyx_obj_5excpp_PyRectangle {
+struct __pyx_obj_9Rectangle_PyRectangle {
   PyObject_HEAD
   excpp::Rectangle *thisptr;
 };
@@ -1161,48 +1159,6 @@ static void __Pyx_AddTraceback(const char *funcname, int c_line,
 #define __Pyx_HAS_GCC_DIAGNOSTIC
 #endif
 
-/* CppExceptionConversion.proto */
-#ifndef __Pyx_CppExn2PyErr
-#include <new>
-#include <typeinfo>
-#include <stdexcept>
-#include <ios>
-static void __Pyx_CppExn2PyErr() {
-  try {
-    if (PyErr_Occurred())
-      ; // let the latest Python exn pass through and ignore the current one
-    else
-      throw;
-  } catch (const std::bad_alloc& exn) {
-    PyErr_SetString(PyExc_MemoryError, exn.what());
-  } catch (const std::bad_cast& exn) {
-    PyErr_SetString(PyExc_TypeError, exn.what());
-  } catch (const std::bad_typeid& exn) {
-    PyErr_SetString(PyExc_TypeError, exn.what());
-  } catch (const std::domain_error& exn) {
-    PyErr_SetString(PyExc_ValueError, exn.what());
-  } catch (const std::invalid_argument& exn) {
-    PyErr_SetString(PyExc_ValueError, exn.what());
-  } catch (const std::ios_base::failure& exn) {
-    PyErr_SetString(PyExc_IOError, exn.what());
-  } catch (const std::out_of_range& exn) {
-    PyErr_SetString(PyExc_IndexError, exn.what());
-  } catch (const std::overflow_error& exn) {
-    PyErr_SetString(PyExc_OverflowError, exn.what());
-  } catch (const std::range_error& exn) {
-    PyErr_SetString(PyExc_ArithmeticError, exn.what());
-  } catch (const std::underflow_error& exn) {
-    PyErr_SetString(PyExc_ArithmeticError, exn.what());
-  } catch (const std::exception& exn) {
-    PyErr_SetString(PyExc_RuntimeError, exn.what());
-  }
-  catch (...)
-  {
-    PyErr_SetString(PyExc_RuntimeError, "Unknown exception");
-  }
-}
-#endif
-
 /* CIntFromPy.proto */
 static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
 
@@ -1235,13 +1191,13 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'excpp' */
-static PyTypeObject *__pyx_ptype_5excpp_PyRectangle = 0;
-#define __Pyx_MODULE_NAME "excpp"
-extern int __pyx_module_is_main_excpp;
-int __pyx_module_is_main_excpp = 0;
+/* Module declarations from 'Rectangle' */
+static PyTypeObject *__pyx_ptype_9Rectangle_PyRectangle = 0;
+#define __Pyx_MODULE_NAME "Rectangle"
+extern int __pyx_module_is_main_Rectangle;
+int __pyx_module_is_main_Rectangle = 0;
 
-/* Implementation of 'excpp' */
+/* Implementation of 'Rectangle' */
 static PyObject *__pyx_builtin_TypeError;
 static const char __pyx_k_dx[] = "dx";
 static const char __pyx_k_dy[] = "dy";
@@ -1281,20 +1237,20 @@ static PyObject *__pyx_n_s_x0;
 static PyObject *__pyx_n_s_x1;
 static PyObject *__pyx_n_s_y0;
 static PyObject *__pyx_n_s_y1;
-static int __pyx_pf_5excpp_11PyRectangle___cinit__(struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self, int __pyx_v_x0, int __pyx_v_y0, int __pyx_v_x1, int __pyx_v_y1); /* proto */
-static void __pyx_pf_5excpp_11PyRectangle_2__dealloc__(struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5excpp_11PyRectangle_4getLength(struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5excpp_11PyRectangle_6getHeight(struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5excpp_11PyRectangle_8getArea(struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5excpp_11PyRectangle_10move(struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self, int __pyx_v_dx, int __pyx_v_dy); /* proto */
-static PyObject *__pyx_pf_5excpp_11PyRectangle_12__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5excpp_11PyRectangle_14__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_tp_new_5excpp_PyRectangle(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static int __pyx_pf_9Rectangle_11PyRectangle___cinit__(struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self, int __pyx_v_x0, int __pyx_v_y0, int __pyx_v_x1, int __pyx_v_y1); /* proto */
+static void __pyx_pf_9Rectangle_11PyRectangle_2__dealloc__(struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_9Rectangle_11PyRectangle_4getLength(struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_9Rectangle_11PyRectangle_6getHeight(struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_9Rectangle_11PyRectangle_8getArea(struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_9Rectangle_11PyRectangle_10move(struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self, int __pyx_v_dx, int __pyx_v_dy); /* proto */
+static PyObject *__pyx_pf_9Rectangle_11PyRectangle_12__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_9Rectangle_11PyRectangle_14__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_tp_new_9Rectangle_PyRectangle(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
 /* Late includes */
 
-/* "cython/rectInterface.pyx":15
+/* "Rectangle.pyx":15
  *     cdef Rectangle *thisptr
  * 
  *     def __cinit__(self, int x0, int y0, int x1, int y1):             # <<<<<<<<<<<<<<
@@ -1303,8 +1259,8 @@ static PyObject *__pyx_tuple__2;
  */
 
 /* Python wrapper */
-static int __pyx_pw_5excpp_11PyRectangle_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_5excpp_11PyRectangle_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_9Rectangle_11PyRectangle_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_9Rectangle_11PyRectangle_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_x0;
   int __pyx_v_y0;
   int __pyx_v_x1;
@@ -1377,42 +1333,32 @@ static int __pyx_pw_5excpp_11PyRectangle_1__cinit__(PyObject *__pyx_v_self, PyOb
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 15, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("excpp.PyRectangle.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("Rectangle.PyRectangle.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5excpp_11PyRectangle___cinit__(((struct __pyx_obj_5excpp_PyRectangle *)__pyx_v_self), __pyx_v_x0, __pyx_v_y0, __pyx_v_x1, __pyx_v_y1);
+  __pyx_r = __pyx_pf_9Rectangle_11PyRectangle___cinit__(((struct __pyx_obj_9Rectangle_PyRectangle *)__pyx_v_self), __pyx_v_x0, __pyx_v_y0, __pyx_v_x1, __pyx_v_y1);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_5excpp_11PyRectangle___cinit__(struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self, int __pyx_v_x0, int __pyx_v_y0, int __pyx_v_x1, int __pyx_v_y1) {
+static int __pyx_pf_9Rectangle_11PyRectangle___cinit__(struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self, int __pyx_v_x0, int __pyx_v_y0, int __pyx_v_x1, int __pyx_v_y1) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
-  excpp::Rectangle *__pyx_t_1;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "cython/rectInterface.pyx":16
+  /* "Rectangle.pyx":16
  * 
  *     def __cinit__(self, int x0, int y0, int x1, int y1):
  *         self.thisptr = new Rectangle(x0, y0, x1, y1)             # <<<<<<<<<<<<<<
  * 
  *     def __dealloc__(self):
  */
-  try {
-    __pyx_t_1 = new excpp::Rectangle(__pyx_v_x0, __pyx_v_y0, __pyx_v_x1, __pyx_v_y1);
-  } catch(...) {
-    __Pyx_CppExn2PyErr();
-    __PYX_ERR(1, 16, __pyx_L1_error)
-  }
-  __pyx_v_self->thisptr = __pyx_t_1;
+  __pyx_v_self->thisptr = new excpp::Rectangle(__pyx_v_x0, __pyx_v_y0, __pyx_v_x1, __pyx_v_y1);
 
-  /* "cython/rectInterface.pyx":15
+  /* "Rectangle.pyx":15
  *     cdef Rectangle *thisptr
  * 
  *     def __cinit__(self, int x0, int y0, int x1, int y1):             # <<<<<<<<<<<<<<
@@ -1422,16 +1368,11 @@ static int __pyx_pf_5excpp_11PyRectangle___cinit__(struct __pyx_obj_5excpp_PyRec
 
   /* function exit code */
   __pyx_r = 0;
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_AddTraceback("excpp.PyRectangle.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = -1;
-  __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "cython/rectInterface.pyx":18
+/* "Rectangle.pyx":18
  *         self.thisptr = new Rectangle(x0, y0, x1, y1)
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1440,21 +1381,21 @@ static int __pyx_pf_5excpp_11PyRectangle___cinit__(struct __pyx_obj_5excpp_PyRec
  */
 
 /* Python wrapper */
-static void __pyx_pw_5excpp_11PyRectangle_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_5excpp_11PyRectangle_3__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_9Rectangle_11PyRectangle_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_9Rectangle_11PyRectangle_3__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_5excpp_11PyRectangle_2__dealloc__(((struct __pyx_obj_5excpp_PyRectangle *)__pyx_v_self));
+  __pyx_pf_9Rectangle_11PyRectangle_2__dealloc__(((struct __pyx_obj_9Rectangle_PyRectangle *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_5excpp_11PyRectangle_2__dealloc__(struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self) {
+static void __pyx_pf_9Rectangle_11PyRectangle_2__dealloc__(struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "cython/rectInterface.pyx":19
+  /* "Rectangle.pyx":19
  * 
  *     def __dealloc__(self):
  *         del self.thisptr             # <<<<<<<<<<<<<<
@@ -1463,7 +1404,7 @@ static void __pyx_pf_5excpp_11PyRectangle_2__dealloc__(struct __pyx_obj_5excpp_P
  */
   delete __pyx_v_self->thisptr;
 
-  /* "cython/rectInterface.pyx":18
+  /* "Rectangle.pyx":18
  *         self.thisptr = new Rectangle(x0, y0, x1, y1)
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -1475,7 +1416,7 @@ static void __pyx_pf_5excpp_11PyRectangle_2__dealloc__(struct __pyx_obj_5excpp_P
   __Pyx_RefNannyFinishContext();
 }
 
-/* "cython/rectInterface.pyx":21
+/* "Rectangle.pyx":21
  *         del self.thisptr
  * 
  *     def getLength(self):             # <<<<<<<<<<<<<<
@@ -1484,19 +1425,19 @@ static void __pyx_pf_5excpp_11PyRectangle_2__dealloc__(struct __pyx_obj_5excpp_P
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5excpp_11PyRectangle_5getLength(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_5excpp_11PyRectangle_5getLength(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_9Rectangle_11PyRectangle_5getLength(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_9Rectangle_11PyRectangle_5getLength(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("getLength (wrapper)", 0);
-  __pyx_r = __pyx_pf_5excpp_11PyRectangle_4getLength(((struct __pyx_obj_5excpp_PyRectangle *)__pyx_v_self));
+  __pyx_r = __pyx_pf_9Rectangle_11PyRectangle_4getLength(((struct __pyx_obj_9Rectangle_PyRectangle *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5excpp_11PyRectangle_4getLength(struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self) {
+static PyObject *__pyx_pf_9Rectangle_11PyRectangle_4getLength(struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1505,7 +1446,7 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_4getLength(struct __pyx_obj_5excp
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("getLength", 0);
 
-  /* "cython/rectInterface.pyx":22
+  /* "Rectangle.pyx":22
  * 
  *     def getLength(self):
  *         return self.thisptr.get_length()             # <<<<<<<<<<<<<<
@@ -1519,7 +1460,7 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_4getLength(struct __pyx_obj_5excp
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cython/rectInterface.pyx":21
+  /* "Rectangle.pyx":21
  *         del self.thisptr
  * 
  *     def getLength(self):             # <<<<<<<<<<<<<<
@@ -1530,7 +1471,7 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_4getLength(struct __pyx_obj_5excp
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("excpp.PyRectangle.getLength", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("Rectangle.PyRectangle.getLength", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1538,7 +1479,7 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_4getLength(struct __pyx_obj_5excp
   return __pyx_r;
 }
 
-/* "cython/rectInterface.pyx":23
+/* "Rectangle.pyx":23
  *     def getLength(self):
  *         return self.thisptr.get_length()
  *     def getHeight(self):             # <<<<<<<<<<<<<<
@@ -1547,19 +1488,19 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_4getLength(struct __pyx_obj_5excp
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5excpp_11PyRectangle_7getHeight(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_5excpp_11PyRectangle_7getHeight(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_9Rectangle_11PyRectangle_7getHeight(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_9Rectangle_11PyRectangle_7getHeight(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("getHeight (wrapper)", 0);
-  __pyx_r = __pyx_pf_5excpp_11PyRectangle_6getHeight(((struct __pyx_obj_5excpp_PyRectangle *)__pyx_v_self));
+  __pyx_r = __pyx_pf_9Rectangle_11PyRectangle_6getHeight(((struct __pyx_obj_9Rectangle_PyRectangle *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5excpp_11PyRectangle_6getHeight(struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self) {
+static PyObject *__pyx_pf_9Rectangle_11PyRectangle_6getHeight(struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1568,7 +1509,7 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_6getHeight(struct __pyx_obj_5excp
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("getHeight", 0);
 
-  /* "cython/rectInterface.pyx":24
+  /* "Rectangle.pyx":24
  *         return self.thisptr.get_length()
  *     def getHeight(self):
  *         return self.thisptr.get_height()             # <<<<<<<<<<<<<<
@@ -1582,7 +1523,7 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_6getHeight(struct __pyx_obj_5excp
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cython/rectInterface.pyx":23
+  /* "Rectangle.pyx":23
  *     def getLength(self):
  *         return self.thisptr.get_length()
  *     def getHeight(self):             # <<<<<<<<<<<<<<
@@ -1593,7 +1534,7 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_6getHeight(struct __pyx_obj_5excp
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("excpp.PyRectangle.getHeight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("Rectangle.PyRectangle.getHeight", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1601,7 +1542,7 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_6getHeight(struct __pyx_obj_5excp
   return __pyx_r;
 }
 
-/* "cython/rectInterface.pyx":25
+/* "Rectangle.pyx":25
  *     def getHeight(self):
  *         return self.thisptr.get_height()
  *     def getArea(self):             # <<<<<<<<<<<<<<
@@ -1610,19 +1551,19 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_6getHeight(struct __pyx_obj_5excp
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5excpp_11PyRectangle_9getArea(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_5excpp_11PyRectangle_9getArea(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_9Rectangle_11PyRectangle_9getArea(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_9Rectangle_11PyRectangle_9getArea(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("getArea (wrapper)", 0);
-  __pyx_r = __pyx_pf_5excpp_11PyRectangle_8getArea(((struct __pyx_obj_5excpp_PyRectangle *)__pyx_v_self));
+  __pyx_r = __pyx_pf_9Rectangle_11PyRectangle_8getArea(((struct __pyx_obj_9Rectangle_PyRectangle *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5excpp_11PyRectangle_8getArea(struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self) {
+static PyObject *__pyx_pf_9Rectangle_11PyRectangle_8getArea(struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1631,7 +1572,7 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_8getArea(struct __pyx_obj_5excpp_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("getArea", 0);
 
-  /* "cython/rectInterface.pyx":26
+  /* "Rectangle.pyx":26
  *         return self.thisptr.get_height()
  *     def getArea(self):
  *         return self.thisptr.get_area()             # <<<<<<<<<<<<<<
@@ -1645,7 +1586,7 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_8getArea(struct __pyx_obj_5excpp_
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cython/rectInterface.pyx":25
+  /* "Rectangle.pyx":25
  *     def getHeight(self):
  *         return self.thisptr.get_height()
  *     def getArea(self):             # <<<<<<<<<<<<<<
@@ -1656,7 +1597,7 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_8getArea(struct __pyx_obj_5excpp_
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("excpp.PyRectangle.getArea", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("Rectangle.PyRectangle.getArea", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1664,7 +1605,7 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_8getArea(struct __pyx_obj_5excpp_
   return __pyx_r;
 }
 
-/* "cython/rectInterface.pyx":28
+/* "Rectangle.pyx":28
  *         return self.thisptr.get_area()
  * 
  *     def move(self, int dx, int dy):             # <<<<<<<<<<<<<<
@@ -1673,8 +1614,8 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_8getArea(struct __pyx_obj_5excpp_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5excpp_11PyRectangle_11move(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5excpp_11PyRectangle_11move(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_9Rectangle_11PyRectangle_11move(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_9Rectangle_11PyRectangle_11move(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_dx;
   int __pyx_v_dy;
   int __pyx_lineno = 0;
@@ -1725,23 +1666,23 @@ static PyObject *__pyx_pw_5excpp_11PyRectangle_11move(PyObject *__pyx_v_self, Py
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("move", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 28, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("excpp.PyRectangle.move", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("Rectangle.PyRectangle.move", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5excpp_11PyRectangle_10move(((struct __pyx_obj_5excpp_PyRectangle *)__pyx_v_self), __pyx_v_dx, __pyx_v_dy);
+  __pyx_r = __pyx_pf_9Rectangle_11PyRectangle_10move(((struct __pyx_obj_9Rectangle_PyRectangle *)__pyx_v_self), __pyx_v_dx, __pyx_v_dy);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5excpp_11PyRectangle_10move(struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self, int __pyx_v_dx, int __pyx_v_dy) {
+static PyObject *__pyx_pf_9Rectangle_11PyRectangle_10move(struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self, int __pyx_v_dx, int __pyx_v_dy) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("move", 0);
 
-  /* "cython/rectInterface.pyx":29
+  /* "Rectangle.pyx":29
  * 
  *     def move(self, int dx, int dy):
  *         self.thisptr.move(dx, dy)             # <<<<<<<<<<<<<<
@@ -1749,7 +1690,7 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_10move(struct __pyx_obj_5excpp_Py
  */
   __pyx_v_self->thisptr->move(__pyx_v_dx, __pyx_v_dy);
 
-  /* "cython/rectInterface.pyx":28
+  /* "Rectangle.pyx":28
  *         return self.thisptr.get_area()
  * 
  *     def move(self, int dx, int dy):             # <<<<<<<<<<<<<<
@@ -1771,19 +1712,19 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_10move(struct __pyx_obj_5excpp_Py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5excpp_11PyRectangle_13__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_5excpp_11PyRectangle_13__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_9Rectangle_11PyRectangle_13__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_9Rectangle_11PyRectangle_13__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_5excpp_11PyRectangle_12__reduce_cython__(((struct __pyx_obj_5excpp_PyRectangle *)__pyx_v_self));
+  __pyx_r = __pyx_pf_9Rectangle_11PyRectangle_12__reduce_cython__(((struct __pyx_obj_9Rectangle_PyRectangle *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5excpp_11PyRectangle_12__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self) {
+static PyObject *__pyx_pf_9Rectangle_11PyRectangle_12__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1813,7 +1754,7 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_12__reduce_cython__(CYTHON_UNUSED
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("excpp.PyRectangle.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("Rectangle.PyRectangle.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -1828,19 +1769,19 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_12__reduce_cython__(CYTHON_UNUSED
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5excpp_11PyRectangle_15__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static PyObject *__pyx_pw_5excpp_11PyRectangle_15__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_9Rectangle_11PyRectangle_15__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static PyObject *__pyx_pw_9Rectangle_11PyRectangle_15__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_5excpp_11PyRectangle_14__setstate_cython__(((struct __pyx_obj_5excpp_PyRectangle *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_9Rectangle_11PyRectangle_14__setstate_cython__(((struct __pyx_obj_9Rectangle_PyRectangle *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5excpp_11PyRectangle_14__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_5excpp_PyRectangle *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_9Rectangle_11PyRectangle_14__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_9Rectangle_PyRectangle *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1870,14 +1811,14 @@ static PyObject *__pyx_pf_5excpp_11PyRectangle_14__setstate_cython__(CYTHON_UNUS
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("excpp.PyRectangle.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("Rectangle.PyRectangle.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_tp_new_5excpp_PyRectangle(PyTypeObject *t, PyObject *a, PyObject *k) {
+static PyObject *__pyx_tp_new_9Rectangle_PyRectangle(PyTypeObject *t, PyObject *a, PyObject *k) {
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -1885,14 +1826,14 @@ static PyObject *__pyx_tp_new_5excpp_PyRectangle(PyTypeObject *t, PyObject *a, P
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_5excpp_11PyRectangle_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_9Rectangle_11PyRectangle_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_5excpp_PyRectangle(PyObject *o) {
+static void __pyx_tp_dealloc_9Rectangle_PyRectangle(PyObject *o) {
   #if CYTHON_USE_TP_FINALIZE
   if (unlikely(PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE) && Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -1902,29 +1843,29 @@ static void __pyx_tp_dealloc_5excpp_PyRectangle(PyObject *o) {
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     __Pyx_SET_REFCNT(o, Py_REFCNT(o) + 1);
-    __pyx_pw_5excpp_11PyRectangle_3__dealloc__(o);
+    __pyx_pw_9Rectangle_11PyRectangle_3__dealloc__(o);
     __Pyx_SET_REFCNT(o, Py_REFCNT(o) - 1);
     PyErr_Restore(etype, eval, etb);
   }
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static PyMethodDef __pyx_methods_5excpp_PyRectangle[] = {
-  {"getLength", (PyCFunction)__pyx_pw_5excpp_11PyRectangle_5getLength, METH_NOARGS, 0},
-  {"getHeight", (PyCFunction)__pyx_pw_5excpp_11PyRectangle_7getHeight, METH_NOARGS, 0},
-  {"getArea", (PyCFunction)__pyx_pw_5excpp_11PyRectangle_9getArea, METH_NOARGS, 0},
-  {"move", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_5excpp_11PyRectangle_11move, METH_VARARGS|METH_KEYWORDS, 0},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_5excpp_11PyRectangle_13__reduce_cython__, METH_NOARGS, 0},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_5excpp_11PyRectangle_15__setstate_cython__, METH_O, 0},
+static PyMethodDef __pyx_methods_9Rectangle_PyRectangle[] = {
+  {"getLength", (PyCFunction)__pyx_pw_9Rectangle_11PyRectangle_5getLength, METH_NOARGS, 0},
+  {"getHeight", (PyCFunction)__pyx_pw_9Rectangle_11PyRectangle_7getHeight, METH_NOARGS, 0},
+  {"getArea", (PyCFunction)__pyx_pw_9Rectangle_11PyRectangle_9getArea, METH_NOARGS, 0},
+  {"move", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_9Rectangle_11PyRectangle_11move, METH_VARARGS|METH_KEYWORDS, 0},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_9Rectangle_11PyRectangle_13__reduce_cython__, METH_NOARGS, 0},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_9Rectangle_11PyRectangle_15__setstate_cython__, METH_O, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_5excpp_PyRectangle = {
+static PyTypeObject __pyx_type_9Rectangle_PyRectangle = {
   PyVarObject_HEAD_INIT(0, 0)
-  "excpp.PyRectangle", /*tp_name*/
-  sizeof(struct __pyx_obj_5excpp_PyRectangle), /*tp_basicsize*/
+  "Rectangle.PyRectangle", /*tp_name*/
+  sizeof(struct __pyx_obj_9Rectangle_PyRectangle), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_5excpp_PyRectangle, /*tp_dealloc*/
+  __pyx_tp_dealloc_9Rectangle_PyRectangle, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -1957,7 +1898,7 @@ static PyTypeObject __pyx_type_5excpp_PyRectangle = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_5excpp_PyRectangle, /*tp_methods*/
+  __pyx_methods_9Rectangle_PyRectangle, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -1967,7 +1908,7 @@ static PyTypeObject __pyx_type_5excpp_PyRectangle = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_5excpp_PyRectangle, /*tp_new*/
+  __pyx_tp_new_9Rectangle_PyRectangle, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -1998,17 +1939,17 @@ static PyMethodDef __pyx_methods[] = {
 #if PY_MAJOR_VERSION >= 3
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 static PyObject* __pyx_pymod_create(PyObject *spec, PyModuleDef *def); /*proto*/
-static int __pyx_pymod_exec_excpp(PyObject* module); /*proto*/
+static int __pyx_pymod_exec_Rectangle(PyObject* module); /*proto*/
 static PyModuleDef_Slot __pyx_moduledef_slots[] = {
   {Py_mod_create, (void*)__pyx_pymod_create},
-  {Py_mod_exec, (void*)__pyx_pymod_exec_excpp},
+  {Py_mod_exec, (void*)__pyx_pymod_exec_Rectangle},
   {0, NULL}
 };
 #endif
 
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
-    "excpp",
+    "Rectangle",
     0, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
@@ -2140,16 +2081,16 @@ static int __Pyx_modinit_type_init_code(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_5excpp_PyRectangle) < 0) __PYX_ERR(1, 12, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_9Rectangle_PyRectangle) < 0) __PYX_ERR(1, 12, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
-  __pyx_type_5excpp_PyRectangle.tp_print = 0;
+  __pyx_type_9Rectangle_PyRectangle.tp_print = 0;
   #endif
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_5excpp_PyRectangle.tp_dictoffset && __pyx_type_5excpp_PyRectangle.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_5excpp_PyRectangle.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_9Rectangle_PyRectangle.tp_dictoffset && __pyx_type_9Rectangle_PyRectangle.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_9Rectangle_PyRectangle.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_PyRectangle, (PyObject *)&__pyx_type_5excpp_PyRectangle) < 0) __PYX_ERR(1, 12, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_5excpp_PyRectangle) < 0) __PYX_ERR(1, 12, __pyx_L1_error)
-  __pyx_ptype_5excpp_PyRectangle = &__pyx_type_5excpp_PyRectangle;
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_PyRectangle, (PyObject *)&__pyx_type_9Rectangle_PyRectangle) < 0) __PYX_ERR(1, 12, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_9Rectangle_PyRectangle) < 0) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_ptype_9Rectangle_PyRectangle = &__pyx_type_9Rectangle_PyRectangle;
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -2200,11 +2141,11 @@ static int __Pyx_modinit_function_import_code(void) {
 
 
 #if PY_MAJOR_VERSION < 3
-__Pyx_PyMODINIT_FUNC initexcpp(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC initexcpp(void)
+__Pyx_PyMODINIT_FUNC initRectangle(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC initRectangle(void)
 #else
-__Pyx_PyMODINIT_FUNC PyInit_excpp(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC PyInit_excpp(void)
+__Pyx_PyMODINIT_FUNC PyInit_Rectangle(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC PyInit_Rectangle(void)
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 {
   return PyModuleDef_Init(&__pyx_moduledef);
@@ -2271,7 +2212,7 @@ bad:
 }
 
 
-static CYTHON_SMALL_CODE int __pyx_pymod_exec_excpp(PyObject *__pyx_pyinit_module)
+static CYTHON_SMALL_CODE int __pyx_pymod_exec_Rectangle(PyObject *__pyx_pyinit_module)
 #endif
 #endif
 {
@@ -2283,7 +2224,7 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_excpp(PyObject *__pyx_pyinit_modul
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   if (__pyx_m) {
     if (__pyx_m == __pyx_pyinit_module) return 0;
-    PyErr_SetString(PyExc_RuntimeError, "Module 'excpp' has already been imported. Re-initialisation is not supported.");
+    PyErr_SetString(PyExc_RuntimeError, "Module 'Rectangle' has already been imported. Re-initialisation is not supported.");
     return -1;
   }
   #elif PY_MAJOR_VERSION >= 3
@@ -2298,7 +2239,7 @@ if (!__Pyx_RefNanny) {
       Py_FatalError("failed to import 'refnanny' module");
 }
 #endif
-  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_excpp(void)", 0);
+  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_Rectangle(void)", 0);
   if (__Pyx_check_binary_version() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   #ifdef __Pxy_PyFrame_Initialize_Offsets
   __Pxy_PyFrame_Initialize_Offsets();
@@ -2335,7 +2276,7 @@ if (!__Pyx_RefNanny) {
   Py_INCREF(__pyx_m);
   #else
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("excpp", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("Rectangle", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -2353,14 +2294,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_excpp) {
+  if (__pyx_module_is_main_Rectangle) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(1, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "excpp")) {
-      if (unlikely(PyDict_SetItemString(modules, "excpp", __pyx_m) < 0)) __PYX_ERR(1, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "Rectangle")) {
+      if (unlikely(PyDict_SetItemString(modules, "Rectangle", __pyx_m) < 0)) __PYX_ERR(1, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -2381,7 +2322,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   #endif
 
-  /* "cython/rectInterface.pyx":1
+  /* "Rectangle.pyx":1
  * # distutils: language = c++             # <<<<<<<<<<<<<<
  * 
  * 
@@ -2398,11 +2339,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init excpp", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init Rectangle", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init excpp");
+    PyErr_SetString(PyExc_ImportError, "init Rectangle");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

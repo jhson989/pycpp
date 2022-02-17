@@ -3,7 +3,7 @@
 
 cdef extern from "Rectangle.hpp" namespace "excpp":
     cdef cppclass Rectangle:
-        Rectangle(int x0, int y0, int x1, int y1) except +
+        Rectangle(int x0, int y0, int x1, int y1)
         int get_length()
         int get_height()
         int get_area()

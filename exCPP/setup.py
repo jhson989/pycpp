@@ -7,8 +7,10 @@ PROJ_NAME = "excpp"
 ext_modules = [
     Extension(PROJ_NAME,
               sources=[
-                "cython/rectInterface.pyx",
-                "cpp/Rectangle.cpp"
+                "cython/Rectangle.pyx",
+                "cython/Circle.pyx",
+                "cpp/Rectangle.cpp",
+                "cpp/Circle.cpp"
               ],
               include_dirs=["include"],
               language="c++"

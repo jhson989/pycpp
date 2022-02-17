@@ -1,8 +1,7 @@
 #pragma once
 
-
 namespace excpp {
-    
+
 class Rectangle {
 
     private:
